@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator-Metode Regular Falsi</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <nav>
+      <h3>KELOMPOK 5 KELAS C</h3>
+    </nav>
+    <main>
+      <div class="heading">
+        <h1>KALKULATOR</h1>
+        <h3>Metode Regular Falsi</h3>
+      </div>
+      <div class="container">
+        <h5 style="text-align: center; font-family: 'inter', sans-serif; font-size: 15px; font-weight: bold">Masukan Input pada Form Dibawah!</h5>
+        <form onsubmit="event.preventDefault(); calculate();">
+          <div class="form-group">
+            <label for="degree">Input Pangkat Tertinggi :</label>
+            <select name="degree" id="degree">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+
+          <div class="form-group-row" id="coefficients">
+            <!-- Input fields for coefficients dynamically generated based on selected degree -->
+          </div>
+          <div class="form-group">
+            <label for="a">Interval pencarian (Batas bawah) :</label>
+            <input type="number" name="a" id="a" value="1" autocomplete="off" />
+          </div>
+
+          <div class="form-group">
+            <label for="b">Interval pencarian (Batas atas) :</label>
+            <input type="number" name="b" id="b" value="3" autocomplete="off" />
+          </div>
+
+          <div class="form-group">
+            <label for="epsilon">Toleransi Kesalahan :</label>
+            <input type="number" name="epsilon" id="epsilon" value="0.0001" step="any" autocomplete="off" />
+          </div>
+
+          <div class="btn-group">
+            <button class="btn-hitung" type="submit">HITUNG</button>
+            <button class="btn-clear" type="reset">BERSIHKAN</button>
+          </div>
+        </form>
+      </div>
+      <section>
+        <div id="result"></div>
+        <div id="iterations"></div>
+        <canvas id="myChart" width="200">
+          <!-- graph disini -->
+        </canvas>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
